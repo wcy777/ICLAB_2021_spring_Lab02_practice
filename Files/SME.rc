@@ -1,0 +1,101 @@
+Magic 271485
+Revision Verdi_R-2020.12
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 23 2560 1377 204 205
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/str728/ICLAB_2021_spring/Lab02/SME.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 854975.299694 865914.862194
+cursor 135750.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 0
+; marker line index
+markerPos 27
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/home/str728/ICLAB_2021_spring/Lab02/SME.fsdb"
+addSignal -h 15 /TESTBED/clk
+addSignal -h 15 -holdScope rst_n
+addSignal -h 15 -holdScope isstring
+addSignal -h 15 -holdScope ispattern
+addSignal -h 15 -UNSIGNED -ASC -holdScope chardata[7:0]
+addGroup "G2"
+addSignal -h 15 /TESTBED/U_SME/current_state[2:0]
+addSignal -h 15 -holdScope next_state[2:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope str_index[5:0]
+addSignal -h 15 -UNSIGNED -ASC -holdScope str_reg[0:34]
+addSignal -h 15 -holdScope pat_index[3:0]
+addSignal -h 15 -UNSIGNED -ASC -holdScope pat_reg[0:8]
+addSignal -h 15 -holdScope start_char
+addSignal -h 15 -holdScope end_char
+addSignal -h 15 -holdScope mul_char
+addSignal -h 15 -holdScope mul_char_tmp
+addGroup "G3"
+addSignal -h 15 /TESTBED/U_SME/cmp_flag
+addSignal -h 15 -UNSIGNED -UDEC -holdScope cmps_index[5:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope cmpp_index[3:0]
+addSignal -h 15 -holdScope match_en
+addSignal -h 15 -holdScope match_tmp
+addSignal -h 15 -holdScope unmatch_en
+addSignal -h 15 -UNSIGNED -HEX -holdScope cmps_index_cnt[2:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope cmpp_index_cnt[3:0]
+addGroup "G4"
+addSignal -h 15 -UNSIGNED -UDEC /TESTBED/U_SME/str_index_cnt[5:0]
+addGroup "G5"
+addSignal -h 15 /TESTBED/U_SME/match
+addSignal -h 15 -UNSIGNED -UDEC -holdScope match_index[4:0]
+addSignal -h 15 -holdScope out_valid
+addGroup "G6"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "/home/str728/ICLAB_2021_spring/Lab02/SME.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/TESTBED"
+"/TESTBED/U_SME"
+
+SCOPE_LIST_BEGIN
+"/TESTBED"
+"/TESTBED/U_PATTERN"
+"/TESTBED/U_SME"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+
